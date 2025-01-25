@@ -6,16 +6,12 @@
     <title>Document</title>
     
     <style>
-        .container-fluid{
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-        @media (min-width: 768px) {
-            .container-fluid {
-                width: 750px;
-            }
+        body{
+            width: 700px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         #drop_the_text1 input{
@@ -46,7 +42,7 @@
 
 <body>
     <form>
-        <div class="container-fluid" style="text-align: center; margin-top: 20%;">
+        <div class="container-fluid" style="text-align: center;">
             <div class="row">
                 <div class="col">
                     <img src="./image/penix.PNG">
@@ -54,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <h1><b>Sign In</b></h1>
+                    <p style="font-size: 40px;"><b>Sign In</b></p>
                 </div>
             </div>
             <div class="row">
@@ -64,7 +60,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <button type="button" style="width: 450px; height: 30px; margin-top: 5%;" onclick="location.href='https://accounts.google.com/InteractiveLogin/signinchooser?continue=https%3A%2F%2Fwww.google.com%2F%3Fhl%3Dko&ec=GAZAmgQ&hl=ko&passive=true&ifkv=AVdkyDkOOJ9bwtmiTJgREAgb45BACgVbDCfiNELRDGwJnfAP2Usnfehtbjzw7tPVu7lzGn39fL4olA&ddm=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16" style="color: red;">
+                    <button type="button" style="width: 450px; height: 30px; margin-top: 10px;" onclick="location.href='https://accounts.google.com/InteractiveLogin/signinchooser?continue=https%3A%2F%2Fwww.google.com%2F%3Fhl%3Dko&ec=GAZAmgQ&hl=ko&passive=true&ifkv=AVdkyDkOOJ9bwtmiTJgREAgb45BACgVbDCfiNELRDGwJnfAP2Usnfehtbjzw7tPVu7lzGn39fL4olA&ddm=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16" style="color: red;">
                     <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
                     </svg>&emsp;Sign in with google</button><br><br>
                 </div>
@@ -77,14 +73,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-5">
-                    <span style="float: right;"><hr width="180"></span>
+                <div class="col">
+                    <label style="float: right;"><hr width="130px"></label>
                 </div>
-                <div class="col-2">
-                    <span>or use email</span>
+                <div class="col-3">
+                    <label style="width: 100px;">or use email</label>
                 </div>
-                <div class="col-5">
-                    <span style="float: left;"><hr width="180"></span>
+                <div class="col">
+                    <label style="float: left;"><hr width="130px"></label>
                 </div>
             </div>
             <div class="row">
@@ -107,22 +103,22 @@
                     <p id="drop_the_text2"><input type="text" placeholder="Password"></p>
                 </div>
             </div>
-            <div class="row row-col-2">
+            <div class="row">
                 <div class="col">
-                    <p><input type="checkbox" name="name">Remember me</p>
+                    <input type="checkbox" name="name">&nbsp;Remember me
                 </div>
                 <div class="col">
-                    <p style="display: inline-block; width: 47%; color: blue;">Forgot Password?</p>
+                    <label style="color: blue;">Forgot Password?</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-primary" type="submit" style="width: 450px; height: 40px; color: white;"><b>Sign In</b></button>
+                    <button class="btn btn-primary" type="submit" style="width: 450px; height: 40px; color: white; margin-top: 50px;"><b>Sign In</b></button>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <div style="color: blue;"><br>Create an account</div>
+                    <div style="color: blue; margin-bottom: 10%;"><br>Create an account</div>
                 </div>
             </div>
         </div>
