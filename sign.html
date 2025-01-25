@@ -6,11 +6,18 @@
     <title>Document</title>
     
     <style>
-        .container {
-            width: 500px;
-            height: 1000px;
-            position: relative;
+        .container-fluid{
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
         }
+        @media (min-width: 768px) {
+            .container-fluid {
+                width: 750px;
+            }
+        }
+
         #drop_the_text1 input{
             background-image: url(./image/person-fill.svg);
             background-position: 5px center;
@@ -39,7 +46,7 @@
 
 <body>
     <form>
-        <div class="container" style="text-align: center; margin-top: 20%;">
+        <div class="container-fluid" style="text-align: center; margin-top: 20%;">
             <div class="row">
                 <div class="col">
                     <img src="./image/penix.PNG">
@@ -70,19 +77,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
-                     <table style="margin-left: 100px;">
-                        <tr>
-                            <td><p><hr width="200"></p></td>
-                            <td>or use email</td>
-                            <td><p><hr width="200"></p></td>
-                        </tr>
-                     </table>
+                <div class="col-5">
+                    <span style="float: right;"><hr width="180"></span>
+                </div>
+                <div class="col-2">
+                    <span>or use email</span>
+                </div>
+                <div class="col-5">
+                    <span style="float: left;"><hr width="180"></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 col-sm-5 col-md-7 col-lg-8 col-xl-9 col-xxl-9">
-                    <div>ID</div>
+                <div class="col">
+                     <label style="margin-right: 400px;">ID</label>
                 </div>
             </div>
             <div class="row">
@@ -91,8 +98,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 col-sm-5 col-md-7 col-lg-8 col-xl-9 col-xxl-9">
-                    <div>Password</div>
+                <div class="col">
+                    <label style="margin-right: 350px;">Password</label>
                 </div>
             </div>
             <div class="row">
@@ -102,10 +109,10 @@
             </div>
             <div class="row row-col-2">
                 <div class="col">
-                    <p style="text-align: left;"><input type="checkbox" name="name">Remember me</p>
+                    <p><input type="checkbox" name="name">Remember me</p>
                 </div>
                 <div class="col">
-                    <p style="display: inline-block; width: 47%; color: blue; text-align: right;">Forgot Password?</p>
+                    <p style="display: inline-block; width: 47%; color: blue;">Forgot Password?</p>
                 </div>
             </div>
             <div class="row">
