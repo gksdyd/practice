@@ -5,16 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <style>
+    .imgSunny{
+        width: 50px;
+        filter: invert(66%) sepia(80%) saturate(2071%) hue-rotate(336deg) brightness(97%) contrast(100%);
+    }
+
+    .imgKeypad{
+        width: 30px;
+    }
+
+    .nav_left{
+        width: 200px;
+        background-color: #eee;
+        border-right: 1px solid #ddd;
+        position: fixed;
+        height: 100%;
+        font-size: xx-large;
+    }
+
+    .menu li{
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        padding: 0 20px;
+        font-size: 12px;
+        color: #555;
+    }
+
+    #admin{
+        font-size: x-large;
+        color: gray;
+        text-decoration: none;
+    }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar bg-body-tertiary">
-    <div class="continter">
-        <div class="row">
-            <a class="navbar-brand" style="font-size: x-large; color: gray;"><img src="./image/Ads.png" style="margin-bottom: 10px;">&nbsp;Admin</a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./image/Ads.png">
+                <span id="admin">Admin</span>
+            </a>
+            <a class="navbar-brand justify-content-between" href="#">
+                <img src="./image/weather-icons-master/svg/wi-day-sunny.svg" class="imgSunny">
+                <img src="./image/keypad.png" class="imgKeypad">
+                <img src="./image/person.png" class="imgKeypad">
+            </a>
         </div>
-    </div>
     </nav>
+
+    <nav class="nav_left">
+        <ul class="menu">
+            <li>Home</li>
+            <li>공지사항</li>
+            <li>회원관리</li>
+            <li>서비스관리</li>
+            <li>커뮤니케이션</li>
+            <li>시스템관리</li>
+            <li>개인정보관리</li>
+            <li>test</li>
+        </ul>
+    </nav>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
