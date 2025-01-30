@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        #sidebar-wrapper {
+            margin-top: 17px;
+            position: fixed;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-right: 1px solid black;
+        }
+
+        .container {
+            margin-bottom: -50px;
+            width: 100%;
+            top: 12%;
+            left: 14%;
+            transform: translate(-3%1%);
+            position: absolute;    
+        }
+
+        .nav_top {
+            width: 100%;
+            background-color: white;
+            border-bottom: 1px solid #747474;
+            position: fixed;
+            height: 90px;
+            font-size: xx-large;
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            overflow-x: hidden;
+            overflow-y: auto;
+            z-index: 1;
+        }
+
+        .parent {
+            display: flex;
+            margin-left: 170px;
+        }
+
+        /* 질문 */
+        /* 1. .parent>div 의미 */
+        /* 2. 윈도우 창 크기에 따라 적절하게 맞추려면 어떻게 해야 되는지? */
+        /* 3. 윈도우 창이 줄어들 경우, 순서 텍스트 창 위치가 변경됨. */
+        .parent>div {
+            height: 700px;
+        }   
+        .container-fluid  {
+            margin-top: 10px;
+            border-bottom: 1px solid #747474;
+        }
+
+        .imgSunny{
+            width: 50px;
+            filter: invert(66%) sepia(80%) saturate(2071%) hue-rotate(336deg) brightness(97%) contrast(100%);
+        }
+
+        .imgKeypad{
+            width: 30px;
+        }
+
+        .menu li{
+            line-height: 30px;
+            display: block;
+            padding: 0 20px;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: bold;
+            a {
+                color: #555;
+                text-decoration-line: none;
+            }
+        }
+
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- integrity : 하위 리소스 무결성 체크 -->
+</head>
+
+<body>
+    <div style="background-color: #F6F6F6; height: 800px;">
+        <nav class="nav_top">
+            <div class="container-fluid ">
+                <a class="navbar-brand" href="#" style="margin-top: 100px;">
+                    <img src="./image/Ads.png" alt="Ads" style="margin-bottom: 10px;">
+                </a>Admin
+                <a class="navbar-brand" href="#" style="float: right;">
+                    <img src="./image/person.png" class="imgKeypad">
+                </a>
+                <a class="navbar-brand" href="#" style="float: right;">
+                    <img src="./image/keypad.png" class="imgKeypad">
+                </a>
+                <a class="navbar-brand" href="#" style="float: right;">
+                    <img src="./image/weather-icons-master/svg/wi-day-sunny.svg" class="imgSunny">
+                </a>
+            </div>
+        </nav>
+
+        <div style="height: 73px;"></div>
+
+        <div id="sidebar-wrapper" style="z-index: 1;">
+            <ul class="menu">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                  </svg>&nbsp;Home</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                  </svg>&nbsp;공지사항</li>
+                <li><details><summary><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                    <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                  </svg>&nbsp;회원관리</summary>
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                </ul></details></li>
+                <li><details><summary><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
+                    <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+                  </svg>&nbsp;서비스관리</summary>
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                  </ul></details></li>
+                <li><details><summary><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                  </svg>&nbsp;커뮤니케이션</summary>
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                  </ul></details></li>
+                <li><details><summary><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                  </svg>&nbsp;시스템관리</summary>
+                  <ul>
+                    <li><a href="#">코드관리</a></li>
+                    <li><a href="#">코드그룹관리</a></li>
+                  </ul></details></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                  </svg>&nbsp;개인정보관리</li>
+                <li><details><summary><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stack" viewBox="0 0 16 16">
+                    <path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.6.6 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.6.6 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.6.6 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535z"/>
+                    <path d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.6.6 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0z"/>
+                  </svg>&nbsp;test</summary>
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                  </ul></details></li>
+            </ul>
+        </div>
+
+        <form>
+            <div class="parent">
+                <div class="container">
+                    <div class="row" style="width: 100%; height: 200px;">
+                        <div class="row" style="margin-left: 40px; margin-top: 30px;">
+                            <label style="font-weight: bold;"><span style="color: blue;">Page 1</span> > <span style="color: blue;">Page 2</span> > Default</label>
+                        </div>
+                        <div class="row" style="margin-left: 40px;">
+                            <h3 style="font-weight: bolder;">Code</h3>
+                        </div>
+                        <div class="row" style="margin-left: 60px;">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 15%; height: 30px; background-color: white;">
+                                    N
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div><a class="dropdown-item" href="#">Ｎ</a></div>
+                                    <div><a class="dropdown-item" href="#">Ｙ</a></div>
+                                </div>
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 15%; height: 30px; background-color: white;">
+                                    Y
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div><a class="dropdown-item" href="#">Ｎ</a></div>
+                                    <div><a class="dropdown-item" href="#">Ｙ</a></div>
+                                </div>
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 15%; height: 30px; background-color: white;">
+                                    날짜
+                                </button>
+                                <div class="dropdown-menu">
+                                    <input type="date">
+                                </div>
+                                <label style="width: 15%; height: 30px; background-color: white;">2024-12-25</label>
+                                <label style="width: 15%; height: 30px; background-color: white;">2025-01-24</label>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 60px;">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 15%; height: 30px; background-color: white;">
+                                    검색 구분
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div><a class="dropdown-item" href="#">Ｎ</a></div>
+                                    <div><a class="dropdown-item" href="#">Ｙ</a></div>
+                                </div>
+                                <input type="search" placeholder="검색어" style="width: 15%; height: 30px;">
+                                <button type="button" style="width: 40px; height: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                  </svg></button>
+                                <button type="button" style="width: 40px; height: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                                  </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color: white; width: 100%; height: 400px; margin-left: 5px;">
+                        <div class="row" style="margin-left: 20px; margin-top: 10px;">
+                            <div class="dropdown">
+                                <label>Total: 160</label>
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 15%; height: 30px; background-color: white; float: right; border-color: black; margin-right: 10px;">
+                                    5
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div><a class="dropdown-item" href="#">10</a></div>
+                                    <div><a class="dropdown-item" href="#">15</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 20px; margin-top: 10px; margin-left: 20px; font-size: x-small;">
+                            <span style="width: 0%;"><input type="checkbox"></span>
+                            <span style="width: 7%; text-align: center;">#</span>
+                            <span style="width: 7%; text-align: center;">사용<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 8%; text-align: center;">코드그룹코드<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 15%; text-align: center;">코드그룹이름<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 8%; text-align: center;">코드<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 7%; text-align: center;">대체 코드<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 7%; text-align: center;">코드 이름<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 10%; text-align: center;">코드 이름(영문)<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 5%; text-align: center;">순서<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 7%; text-align: center;">등록일<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                            <span style="width: 8%; text-align: center;">수정일<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
+                                </svg></span>
+                        </div>
+                        <div class="row" style="margin-left: 20px; margin-top: 10px; margin-left: 20px; font-size: x-small;">
+                            <span style="width: 0%;"><input type="checkbox"></span>
+                            <span style="width: 7%; text-align: center;">160</span>
+                            <span style="width: 7%; text-align: center;">Y</span>
+                            <span style="width: 8%; text-align: center;">42</span>
+                            <span style="width: 15%; text-align: center;">작품.기타사이트유형</span>
+                            <span style="width: 8%; text-align: center;">381</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 7%; text-align: center;">공식홈페이지</span>
+                            <span style="width: 10%; text-align: center;"></span>
+                            <span style="width: 5%; text-align: center;">1</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 8%; text-align: center;"></span>
+                        </div>
+                        <div class="row" style="margin-left: 20px; margin-top: 10px; margin-left: 20px; font-size: x-small;">
+                            <span style="width: 0%;"><input type="checkbox"></span>
+                            <span style="width: 7%; text-align: center;">159</span>
+                            <span style="width: 7%; text-align: center;">Y</span>
+                            <span style="width: 8%; text-align: center;">42</span>
+                            <span style="width: 15%; text-align: center;">작품.기타사이트유형</span>
+                            <span style="width: 8%; text-align: center;">382</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 7%; text-align: center;">기타사이트</span>
+                            <span style="width: 10%; text-align: center;"></span>
+                            <span style="width: 5%; text-align: center;">2</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 8%; text-align: center;"></span>
+                        </div>
+                        <div class="row" style="margin-left: 20px; margin-top: 10px; margin-left: 20px; font-size: x-small;">
+                            <span style="width: 0%;"><input type="checkbox"></span>
+                            <span style="width: 7%; text-align: center;">158</span>
+                            <span style="width: 7%; text-align: center;">Y</span>
+                            <span style="width: 8%; text-align: center;">41</span>
+                            <span style="width: 15%; text-align: center;">작품.연재사이트</span>
+                            <span style="width: 8%; text-align: center;">372</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 7%; text-align: center;">네이버웹툰</span>
+                            <span style="width: 10%; text-align: center;"></span>
+                            <span style="width: 5%; text-align: center;">1</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 8%; text-align: center;"></span>
+                        </div>
+                        <div class="row" style="margin-left: 20px; margin-top: 10px; margin-left: 20px; font-size: x-small;">
+                            <span style="width: 0%;"><input type="checkbox"></span>
+                            <span style="width: 7%; text-align: center;">157</span>
+                            <span style="width: 7%; text-align: center;">Y</span>
+                            <span style="width: 8%; text-align: center;">41</span>
+                            <span style="width: 15%; text-align: center;">작품.연재사이트</span>
+                            <span style="width: 8%; text-align: center;">373</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 7%; text-align: center;">카카오웹툰</span>
+                            <span style="width: 10%; text-align: center;"></span>
+                            <span style="width: 5%; text-align: center;">2</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 8%; text-align: center;"></span>
+                        </div>
+                        <div class="row" style="margin-left: 20px; margin-top: 10px; margin-left: 20px; font-size: x-small;">
+                            <span style="width: 0%;"><input type="checkbox"></span>
+                            <span style="width: 7%; text-align: center;">156</span>
+                            <span style="width: 7%; text-align: center;">Y</span>
+                            <span style="width: 8%; text-align: center;">41</span>
+                            <span style="width: 15%; text-align: center;">작품.연재사이트</span>
+                            <span style="width: 8%; text-align: center;">374</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 7%; text-align: center;">버프툰</span>
+                            <span style="width: 10%; text-align: center;"></span>
+                            <span style="width: 5%; text-align: center;">3</span>
+                            <span style="width: 7%; text-align: center;"></span>
+                            <span style="width: 8%; text-align: center;"></span>
+                        </div>
+                        <div class="row" style="margin-left: 20px; margin-top: 10px;">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                  <li class="page-item" style="width: 3%;"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item" style="width: 3%;"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item" style="width: 3%;"><a class="page-link" href="#">3</a></li>
+                                  <li><a class="page-link" href="#" style="width: 5%;">&raquo;</a></li>
+                                </ul>
+                              </nav>
+                        </div>
+                        <div class="row" style="margin-left: 20px; margin-top: 10px;">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
+                                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16" style="float: right; margin-right: 20px;">
+                                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-file-earmark-excel" viewBox="0 0 16 16" style="float: right; background-color: green; margin-right: 10px;">
+                                    <path d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z"/>
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                                    </svg>
+                                <img src="./image/U.png" style="float: right; background-color: blue; margin-right: 10px;">
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+    <!-- </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -12,12 +12,6 @@
             height: 100%;
         }
 
-        /* 사이드바 래퍼 스타일 */
-
-        #tool {
-            padding-left: 250px;
-        }
-
         #sidebar-wrapper {
             margin-top: 17px;
             position: fixed;
@@ -27,46 +21,6 @@
             overflow-x: hidden;
             overflow-y: auto;
             border-right: 1px solid black;
-        }
-
-        #page-content-wrapper {
-            width: 100%;
-            padding: 20px;
-        }
-
-        .sidebar-nav {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            line-height: 30px;
-            display: block;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .sidebar-nav li {
-            text-indent: 1.5em;
-            line-height: 2.8em;
-        }
-
-        .sidebar-nav li a {
-
-            display: block;
-
-            text-decoration: none;
-            color: #3c3a3a;
-        }
-
-        .sidebar-nav li a:hover {
-
-            color: black;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .sidebar-nav>.sidebar-brand {
-
-            font-size: 1.3em;
-            line-height: 3em;
         }
 
         .container {
@@ -97,6 +51,7 @@
             justify-content: space-between;
             overflow-x: hidden;
             overflow-y: auto;
+            z-index: 1;
         }
 
         #bsInfo {
@@ -110,28 +65,15 @@
             border-bottom: 1px solid black;
         }
 
-        .mainDiv {
-            display: inline-block;
-            width: 100%;
-
-        }
-
-        #mainDiv1 {
-            width: 15%;
-            height: 700px;
-        }
-
-        #mainDiv2 {
-            width: 80%;
-            height: 700px;
-        }
-
         .parent {
             display: flex;
             margin-left: 170px;
         }
 
         /* 질문 */
+        /* 1. .parent>div 의미 */
+        /* 2. 윈도우 창 크기에 따라 적절하게 맞추려면 어떻게 해야 되는지? */
+        /* 3. 윈도우 창이 줄어들 경우, 순서 텍스트 창 위치가 변경됨. */
         .parent>div {
             height: 900px;
         }   
@@ -229,7 +171,7 @@
                     <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
                   </svg>&nbsp;시스템관리</summary>
                   <ul>
-                    <li><a href="#">코드관리</a></li>
+                    <li><a href="./three.html">코드관리</a></li>
                     <li><a href="#">코드그룹관리</a></li>
                   </ul></details></li>
                 <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -250,209 +192,161 @@
             <div class="mainContainer">
                 <div class="container">
                     <div class="row">
+                        <p id="bsInfo">기본정보</p>
+                    </div>
+                    <div class="row">
                         <div class="col">
-                            <div class="row">
-                                <span id="bsInfo">기본정보</span>
-                                <div class="row" style="margin-left: 0px;">
-                                    <div class="col" style="margin-left: 5px;">
-
-                                        코드그룹 <span style="margin-top: 100px; color: rgb(219, 41, 1);">*</span><br>
-                                        <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                                        <select class="form-select" id="specificSizeSelect">
-                                            <option selected>선택하세요</option>
-                                        </select><br>
-                                        코드 <span style="margin-top: 100px; color: rgb(219, 41, 1);">*</span><br>
-                                        <input class="form-control" type="text" placeholder="자동생성"
-                                            aria-label="Disabled input example" disabled><br>
-                                        사용 여부 <span style="margin-top: 100px; color: rgb(219, 41, 1);">*</span><br>
-                                        <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                                        <select class="form-select" id="specificSizeSelect">
-                                            <option selected>사용</option>
-                                        </select><br>
-                                        설명<br>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label"></label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                rows="3"></textarea>
-                                        </div><br>
-                                        다국어1<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        다국어5<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비1(VARCHAR TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비1(IN TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5zM3 3H2v1h1z" />
-                                            <path
-                                                d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1z" />
-                                            <path fill-rule="evenodd"
-                                                d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5zM2 7h1v1H2zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm1 .5H2v1h1z" />
-                                        </svg>
-
-                                    </div>
-                                    <div class="col">
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        코드(ANOTHER)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" placeholder="영대 소문자 ,숫자" class="form-control"
-                                                id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        순서 <span style="margin-top: 100px; color: rgb(219, 41, 1);">*</span><br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        다국어2<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        다국어6<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비2(VARCHAR TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비2(IN TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-
-
-                                    </div>
-                                    <div class="col">
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        코드 이름<span style="margin-top: 100px; color: rgb(219, 41, 1);">*</span><br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" placeholder="한글,영대소문자,숫자" class="form-control"
-                                                id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비2(IN TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        다국어3<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        다국어7<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비3(VARCHAR TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비3(IN TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-
-                                    </div>
-                                    <div class="col">
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        코드 이름(영문)
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" placeholder="영대 소문자 ,숫자" class="form-control"
-                                                id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        다국어4<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        다국어8<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비4(VARCHAR TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        예비4(IN TYPE)<br>
-                                        <div class="col-auto">
-                                            <label class="visually-hidden" for="autoSizingInput"></label>
-                                            <input type="text" class="form-control" id="autoSizingInput" placeholder="">
-                                        </div><br>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue"
-                                            class="bi bi-database-fill" viewBox="0 0 16 16" style="float: right;">
-                                            <path
-                                                d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223" />
-                                            <path
-                                                d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
-                                            <path
-                                                d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
-                                            <path
-                                                d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
-                                        </svg>
-                                    </div>
-                                </div>
+                            코드그룹<span style="color: red;">*</span>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 270px; height: 30px;">
+                                    선택하세요
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
                             </div>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 30px;">
+                            코드<span style="color: red;">*</span><br>
+                            <input type="text" style="width: 270px; background-color: rgb(223, 221, 221);" placeholder="자동생성">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            코드 (ANOTHER)<br>
+                            <input type="text" style="width: 270px;" placeholder="영대소문자, 숫자">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            코드 이름<span style="color: red;">*</span><br>
+                            <input type="text" style="width: 270px;" placeholder="한글, 영대소문자, 숫자">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            코드 이름(영문)<br>
+                            <input type="text" style="width: 270px;" placeholder="영대소문자, 숫자">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 30px;">
+                            사용여부<span style="color: red;">*</span><br>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 270px; height: 30px;">
+                                    사용
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            순서<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;"></div>
+                        <div class="col" style="margin-top: 30px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 30px;">
+                            설명<br>
+                            <textarea style="width: 590px; height: 100px;"></textarea>
+                        </div>
+                        <div class="col" style="margin-top: 30px;"></div>
+                        <div class="col" style="margin-top: 30px;"></div>
+                        <div class="col" style="margin-top: 30px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 30px;">
+                            다국어1<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            다국어2<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            다국어3<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            다국어4<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 30px;">
+                            다국어5<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            다국어6<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            다국어7<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            다국어8<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 30px;">
+                            예비1 (VARCHAR TYPE)<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            예비2 (VARCHAR TYPE)<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            예비3 (VARCHAR TYPE)<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            예비4 (VARCHAR TYPE)<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 30px;">
+                            예비1 (INT TYPE)<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            예비2 (INT TYPE)<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            예비3 (INT TYPE)<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            예비4 (INT TYPE)<br>
+                            <input type="text" style="width: 270px;">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col">
+                            <button type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg></button>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-database-fill" viewBox="0 0 16 16" style="float: right;">
+                                <path d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223" />
+                                <path d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+                                <path d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+                                <path d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+                            </svg>
                         </div>
                     </div>
                 </div>
