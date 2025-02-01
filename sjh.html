@@ -75,7 +75,7 @@
         /* 2. 윈도우 창 크기에 따라 적절하게 맞추려면 어떻게 해야 되는지? */
         /* 3. 윈도우 창이 줄어들 경우, 순서 텍스트 창 위치가 변경됨. */
         .parent>div {
-            height: 900px;
+            height: 1000px;
         }   
         .container-fluid  {
             margin-top: 10px;
@@ -113,7 +113,7 @@
 </head>
 
 <body>
-    <div style="background-color: #F6F6F6; height: 1020px;">
+    <div style="background-color: #F6F6F6; height: 1100px;">
         <nav class="nav_top">
             <div class="container-fluid ">
                 <a class="navbar-brand" href="#" style="margin-top: 100px;">
@@ -196,9 +196,9 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            코드그룹<span style="color: red;">*</span>
+                            <label class="form-label">코드그룹<span style="color: red;">*</span></label>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 270px; height: 30px;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 270px; height: 35px;">
                                     선택하세요
                                 </button>
                                 <ul class="dropdown-menu">
@@ -214,27 +214,27 @@
                     </div>
                     <div class="row">
                         <div class="col" style="margin-top: 30px;">
-                            코드<span style="color: red;">*</span><br>
-                            <input type="text" style="width: 270px; background-color: rgb(223, 221, 221);" placeholder="자동생성">
+                            <label for="code" class="form-label">코드<span style="color: red;">*</span></label>
+                            <input type="text" class="form-control" id="code" placeholder="자동생성" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            코드 (ANOTHER)<br>
-                            <input type="text" style="width: 270px;" placeholder="영대소문자, 숫자">
+                            <label for="another_code" class="form-label">코드 (ANOTHER)</label>
+                            <input type="text" class="form-control" id="another_code" placeholder="영대소문자, 숫자" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            코드 이름<span style="color: red;">*</span><br>
-                            <input type="text" style="width: 270px;" placeholder="한글, 영대소문자, 숫자">
+                            <label for="code_name" class="form-label">코드 이름<span style="color: red;">*</span></label>
+                            <input type="text" class="form-control" id="code_name" placeholder="한글, 영대소문자, 숫자" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            코드 이름(영문)<br>
-                            <input type="text" style="width: 270px;" placeholder="영대소문자, 숫자">
+                            <label for="code_name_eng" class="form-label">코드 이름(영문)</label>
+                            <input type="text" class="form-control" id="code_name_eng" placeholder="영대소문자, 숫자" style="width: 270px;">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col" style="margin-top: 30px;">
-                            사용여부<span style="color: red;">*</span><br>
+                            <label class="form-label">사용여부<span style="color: red;">*</span></label>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 270px; height: 30px;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 270px; height: 35px;">
                                     사용
                                 </button>
                                 <ul class="dropdown-menu">
@@ -245,16 +245,16 @@
                             </div>
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            순서<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="order" class="form-label">순서</label>
+                            <input type="text" class="form-control" id="order" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;"></div>
                         <div class="col" style="margin-top: 30px;"></div>
                     </div>
                     <div class="row">
                         <div class="col" style="margin-top: 30px;">
-                            설명<br>
-                            <textarea style="width: 590px; height: 100px;"></textarea>
+                            <label for="explain" class="form-label">설명</label>
+                            <textarea style="width: 590px; height: 100px;" id="explain"></textarea>
                         </div>
                         <div class="col" style="margin-top: 30px;"></div>
                         <div class="col" style="margin-top: 30px;"></div>
@@ -262,74 +262,74 @@
                     </div>
                     <div class="row">
                         <div class="col" style="margin-top: 30px;">
-                            다국어1<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="all_langage1" class="form-label">다국어1</label>
+                            <input type="text" class="form-control" id="all_langage1" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            다국어2<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="all_langage2" class="form-label">다국어2</label>
+                            <input type="text" class="form-control" id="all_langage2" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            다국어3<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="all_langage3" class="form-label">다국어3</label>
+                            <input type="text" class="form-control" id="all_langage3" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            다국어4<br>
-                            <input type="text" style="width: 270px;">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col" style="margin-top: 30px;">
-                            다국어5<br>
-                            <input type="text" style="width: 270px;">
-                        </div>
-                        <div class="col" style="margin-top: 30px;">
-                            다국어6<br>
-                            <input type="text" style="width: 270px;">
-                        </div>
-                        <div class="col" style="margin-top: 30px;">
-                            다국어7<br>
-                            <input type="text" style="width: 270px;">
-                        </div>
-                        <div class="col" style="margin-top: 30px;">
-                            다국어8<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="all_langage4" class="form-label">다국어4</label>
+                            <input type="text" class="form-control" id="all_langage4" style="width: 270px;">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col" style="margin-top: 30px;">
-                            예비1 (VARCHAR TYPE)<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="all_langage5" class="form-label">다국어5</label>
+                            <input type="text" class="form-control" id="all_langage5" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            예비2 (VARCHAR TYPE)<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="all_langage6" class="form-label">다국어6</label>
+                            <input type="text" class="form-control" id="all_langage6" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            예비3 (VARCHAR TYPE)<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="all_langage7" class="form-label">다국어7</label>
+                            <input type="text" class="form-control" id="all_langage7" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            예비4 (VARCHAR TYPE)<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="all_langage8" class="form-label">다국어8</label>
+                            <input type="text" class="form-control" id="all_langage8" style="width: 270px;">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col" style="margin-top: 30px;">
-                            예비1 (INT TYPE)<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="preparation1_char" class="form-label">예비1 (VARCHAR TYPE)</label>
+                            <input type="text" class="form-control" id="preparation1_char" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            예비2 (INT TYPE)<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="preparation2_char" class="form-label">예비2 (VARCHAR TYPE)</label>
+                            <input type="text" class="form-control" id="preparation2_char" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            예비3 (INT TYPE)<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="preparation3_char" class="form-label">예비3 (VARCHAR TYPE)</label>
+                            <input type="text" class="form-control" id="preparation3_char" style="width: 270px;">
                         </div>
                         <div class="col" style="margin-top: 30px;">
-                            예비4 (INT TYPE)<br>
-                            <input type="text" style="width: 270px;">
+                            <label for="preparation4_char" class="form-label">예비4 (VARCHAR TYPE)</label>
+                            <input type="text" class="form-control" id="preparation4_char" style="width: 270px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 30px;">
+                            <label for="preparation1_int" class="form-label">예비1 (INT TYPE)</label>
+                            <input type="text" class="form-control" id="preparation1_int" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            <label for="preparation2_int" class="form-label">예비2 (INT TYPE)</label>
+                            <input type="text" class="form-control" id="preparation2_int" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            <label for="preparation3_int" class="form-label">예비3 (INT TYPE)</label>
+                            <input type="text" class="form-control" id="preparation3_int" style="width: 270px;">
+                        </div>
+                        <div class="col" style="margin-top: 30px;">
+                            <label for="preparation4_int" class="form-label">예비4 (INT TYPE)</label>
+                            <input type="text" class="form-control" id="preparation4_int" style="width: 270px;">
                         </div>
                     </div>
                     <div class="row" style="margin-top: 30px;">
